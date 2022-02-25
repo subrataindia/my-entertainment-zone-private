@@ -13,9 +13,11 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 5px;
-  background-color: var(--primary-color-dark);
+
+  /* background-color: var(--primary-color-dark); */
   border-radius: 10px;
-  color: var(--white);
+
+  /* color: var(--white); */
 }
 
 .media:hover {

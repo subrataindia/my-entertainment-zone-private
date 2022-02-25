@@ -16,7 +16,11 @@ export default function MainNav() {
 
   return (
     <BottomNavigation
-      sx={{ width: "100%", backgroundColor: "#921122" }}
+      sx={{
+        width: "100%",
+        bgcolor: "background.default",
+        color: "text.primary",
+      }}
       value={navValue}
       onChange={handleChange}
     >

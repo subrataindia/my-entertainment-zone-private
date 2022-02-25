@@ -3,6 +3,7 @@ import { img_300, unavailable } from "../../config/config";
 import "./SingleContent.css";
 import Badge from "@mui/material/Badge";
 import { NavLink } from "react-router-dom";
+import { Box } from "@mui/material";
 
 const SingleContent = ({
   id,
@@ -23,7 +24,13 @@ const SingleContent = ({
       }
       className="mediaContainer"
     >
-      <div className="media">
+      <Box
+        className="media"
+        sx={{
+          bgcolor: "background.default",
+          color: "text.primary",
+        }}
+      >
         <div className="poster">
           <Badge
             badgeContent={vote_average}
@@ -49,7 +56,7 @@ const SingleContent = ({
           </span>
           <span>{date}</span>
         </div>
-      </div>
+      </Box>
     </NavLink>
   );
 };

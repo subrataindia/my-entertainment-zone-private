@@ -65,7 +65,6 @@ const Search = () => {
             label="Enter Here and click the Search button"
             value={searchText}
             onChange={handleSearchChange}
-            color="secondary"
           />
           <IconButton
             sx={{ p: "10px" }}

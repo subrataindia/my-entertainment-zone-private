@@ -31,14 +31,16 @@ const PageContainer = ({
           <Chip
             label="Movies"
             onClick={handleClick}
-            variant="outlined"
             onDelete={handleDelete}
+            variant="outlined"
+            color="primary"
             deleteIcon={mediaTypes === "movie" ? <DoneIcon /> : <CloseIcon />}
           />
           <Chip
             label="TV Series"
             onClick={handleClick}
             variant="outlined"
+            color="primary"
             onDelete={handleDelete}
             deleteIcon={mediaTypes === "tv" ? <DoneIcon /> : <CloseIcon />}
           />

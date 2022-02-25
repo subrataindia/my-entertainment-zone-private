@@ -32,19 +32,19 @@ body {
 }
 
 .App {
+  width: 100%;
   flex-grow: 1;
-  background-color: var(--primary-color-lighter);
-  overflow-y: auto;
 
-  /* padding-top: 155px;
-  padding-bottom: 70px; */
+  /* background-color: var(--primary-color-lighter); */
+  overflow-y: auto;
 }
 
 .pageTitle {
   font-family: var(--heading-font);
   text-align: center;
   font-size: 1.5em;
-  color: var(--primary-color-dark);
+
+  /* color: var(--primary-color-dark); */
 }
 
 .trending {
