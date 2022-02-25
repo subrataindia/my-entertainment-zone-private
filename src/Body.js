@@ -12,6 +12,7 @@ import Movie from "./Pages/Movie/Movie";
 import Search from "./Pages/Search/Search";
 import About from "./Pages/About/About";
 import Box from "@mui/material/Box";
+import RandomImageHome from "./ImageApi/Pages/Home/RandomImageHome";
 
 const Body = () => {
   return (
@@ -41,6 +42,7 @@ const Body = () => {
           <Route exact path="/movie/:id" element={<Movie />} />
           <Route exact path="/tv/:id" element={<Movie radioValue="tv" />} />
           <Route exact path="/recents" element={<Home />} />
+          <Route exact path="/randomimages" element={<RandomImageHome />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/search" element={<Search />} />
           <Route exact path="/*" element={<Missing />} />
