@@ -1,40 +1,54 @@
-import { Button, TextField } from '@mui/material'
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { img_300 } from '../../../config/config';
+import { Button, TextField } from "@mui/material";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { noPicture } from "../../../config/config";
+import "./RandomImagesHome.css";
 
 const RandomImageHome = () => {
-  const [imageName, setImageName] = useState('');
-  const [imgUrl, setImgUrl] = useState('');
+  const [imageName, setImageName] = useState("");
+  const [buttonText, setButtonText] = useState("FETCH IMAGE");
+  const [imgUrl, setImgUrl] = useState("");
   const handleImageNameChange = (e) => {
-      setImageName(e.target.value);
-  }
+    setImageName(e.target.value);
+  };
 
   let fetchImage = () => {
-      setImgUrl(img_300);
-      axios.get(`https://api.giphy.com/v1/gifs/translate?api_key=${process.env.REACT_APP_IMAGE_API_KEY}&s=${imageName}`)
+    setImgUrl(noPicture);
+    setButtonText("Please Wait...");
+    axios
+      .get(
+        `https://api.giphy.com/v1/gifs/translate?api_key=${process.env.REACT_APP_IMAGE_API_KEY}&s=${imageName}`
+      )
       .then((response) => {
         console.log(response.data.data.images.original.url);
         setImgUrl(response.data.data.images.original.url);
-      })
-  };  
-
+        setButtonText("Fetch New Image");
+      });
+  };
 
   useEffect(() => {
-      //fetchImage();
-  },[]);
+    setImgUrl(noPicture);
+    //fetchImage();
+  }, []);
 
   return (
-    <div>
+    <div className="randomImageContainer">
+      <div className="pageHeading grid-item">
         <h2>RandomImageHome</h2>
-        <TextField
-            value={imageName}
-            onChange={handleImageNameChange}
-        />
-        <Button onClick={fetchImage}>Fetch Image</Button>
-        <img src={imgUrl} />
+      </div>
+      <div className="randomImageNameInput grid-item">
+        <TextField value={imageName} onChange={handleImageNameChange} />
+      </div>
+      <div className="randomImageSearchButton grid-item">
+        <Button variant="contained" onClick={fetchImage}>
+          {buttonText}
+        </Button>
+      </div>
+      <div className="randomImageDisplay grid-item">
+        <img src={imgUrl} alt="search" />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default RandomImageHome
+export default RandomImageHome;

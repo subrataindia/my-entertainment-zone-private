@@ -5,6 +5,7 @@ import WhatshotIcon from "@mui/icons-material/Whatshot";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import FindInPageIcon from "@mui/icons-material/FindInPage";
 import DeviceUnknownIcon from "@mui/icons-material/DeviceUnknown";
+import ImageSearchIcon from "@mui/icons-material/ImageSearch";
 
 export default function MainNav() {
   const [navValue, setNavValue] = React.useState("trending");
@@ -44,6 +45,13 @@ export default function MainNav() {
         label="About"
         value="About"
         icon={<DeviceUnknownIcon />}
+      />
+      <BottomNavigationAction
+        component={Link}
+        to="/randomimages"
+        label="RandomImages"
+        value="randomimages"
+        icon={<ImageSearchIcon />}
       />
     </BottomNavigation>
   );

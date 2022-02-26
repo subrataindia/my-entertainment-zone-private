@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const TvSeries = () => {
-  return (
-    <div>TvSeries</div>
-  )
-}
+  return <div>TvSeries</div>;
+};
 
-export default TvSeries
+export default TvSeries;
