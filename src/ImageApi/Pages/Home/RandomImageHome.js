@@ -1,7 +1,7 @@
 import { Button, TextField } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { noPicture } from "../../../config/config";
+import { noPicture, loadingImage } from "../../../config/config";
 import "./RandomImagesHome.css";
 
 const RandomImageHome = () => {
@@ -13,7 +13,7 @@ const RandomImageHome = () => {
   };
 
   let fetchImage = () => {
-    setImgUrl(noPicture);
+    setImgUrl(loadingImage);
     setButtonText("Please Wait...");
     axios
       .get(
@@ -34,7 +34,7 @@ const RandomImageHome = () => {
   return (
     <div className="randomImageContainer">
       <div className="pageHeading grid-item">
-        <h2>RandomImageHome</h2>
+        <h2>Random Images</h2>
       </div>
       <div className="randomImageNameInput grid-item">
         <TextField value={imageName} onChange={handleImageNameChange} />
@@ -46,6 +46,9 @@ const RandomImageHome = () => {
       </div>
       <div className="randomImageDisplay grid-item">
         <img src={imgUrl} alt="search" />
+      </div>
+      <div className="randomImageFooter grid-item">
+        <a href="https://giphy.com/">Powered by: Giphy.com</a>
       </div>
     </div>
   );

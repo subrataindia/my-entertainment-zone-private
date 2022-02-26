@@ -13,3 +13,7 @@ export const unavailableLandscape =
 // For Carousel
 export const noPicture =
   "https://upload.wikimedia.org/wikipedia/en/6/60/No_Picture.jpg";
+
+// image loading
+export const loadingImage =
+  "https://raw.githubusercontent.com/Codelessly/FlutterLoadingGIFs/master/packages/cupertino_activity_indicator.gif";  
